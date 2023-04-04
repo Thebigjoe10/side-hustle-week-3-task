@@ -1,183 +1,273 @@
 body {
- font-family: Arial, sans-serif;
- margin: 0;
- padding: 0;
- background-image:url(4.jpg);
- background-position: center;
- background-size: cover;
- transition: all 1.5s linear;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(4.jpg);
+  background-position: center;
+  background-size: cover;
+  transition: all 1.5s linear;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 
 /* Header styles */
 header {
- color: mintcream;
- padding: 20px;
- text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 10px 16%;
+  border-bottom: 1px solid transparent;
+  transition: all .40 ease;
+  color: mintcream;
+}
+
+header.sticky {
+  padding: 10px 16%;
+  background: linear-gradient(to right, #FD746C, #2C3E50);
+  border-bottom: 1px solid #0e1630;
 }
 
 h1 {
- margin: 0;
- font-size: 3em;
+  margin: 0;
+  font-size: 3em;
 }
 
 .logo {
- position: absolute;
- top: 20;
+  position: absolute;
+  top: 10;
 
+}
+
+main {
+  padding: 20px 3% 10px;
+
+}
+
+nav {
+  margin: 35px;
+  padding: 5px;
 }
 
 nav ul {
- position: relative;
- list-style: none;
- margin: 0;
- padding: 0;
- display: inline-block;
+  position: relative;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
 }
 
 nav li {
- float: left;
- position: relative;
+  float: left;
+  position: relative;
 
 }
 
 nav a {
- display: inline-block;
- padding: 0 10px;
- line-height: 50px;
- color: mintcream;
- font-size: 16px;
- text-decoration: none;
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 50px;
+  color: mintcream;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 nav ul ul {
- display: none;
- position: absolute;
- top: 100%;
- left: 0;
- background-color: black;
- border: 1px solid #0e0d0d;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
+  border: 1px solid #0e0d0d;
 }
 
 nav ul li:hover>ul {
- display: inherit;
+  display: inherit;
 }
 
 nav ul ul li {
- float: none;
- position: relative;
+  float: none;
+  position: relative;
 }
 
 .link::before,
 .link::after {
- content: "";
- position: absolute;
- left: 0;
- width: 100%;
- height: 2px;
- background-color: #a65454;
- transform: scaleX(0);
- transition: transform .25s;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a65454;
+  transform: scaleX(0);
+  transition: transform .25s;
 }
 
 .link::before {
- top: -3px;
- transform-origin: left;
+  top: -3px;
+  transform-origin: left;
 }
 
 .link::after {
- bottom: -3px;
- transform-origin: right;
+  bottom: -3px;
+  transform-origin: right;
 }
 
 .link:hover::before,
 .link:hover::after {
- transform: scaleX(1);
+  transform: scaleX(1);
 }
+
+.signup-container {
+  display: flex;
+  width: 90%;
+  height: 80vh;
+  background: #2C3E50;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FD746C, #2C3E50);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FD746C, #2C3E50);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 1px solid #FFF;
+  border-top-left-radius: 35px;
+  margin: 20px 5% 10px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-side h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  margin: auto 0;
+  padding: 10px;
+  color: mintcream;
+}
+
+.left-side p {
+  padding: 15px;
+  color: mintcream;
+}
+
 .form-popup {
- display: block;
- position: fixed;
-  bottom: -10px;
-  right: 10px;
+  display: block;
+  position: relative;
+  top: 35px;
+  left: 300px;
   /* border: 2px solid #f1f1f1; */
   /* z-index: 9; */
 }
+
 .form-container input[type=email],
 .form-container input[type=text],
 .form-container input[type=password] {
- width: 100%;
- padding: 10px;
- margin: 5px 0 10px 0;
- border: none;
- background: #f1f1f1;
- outline: none;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  border: none;
+  outline: none;
+
 }
+
 .form-container {
- max-width: 300px;
- max-height: 500px;
- padding: 5px;
- background-color: white;
+  max-width: 500px;
+  max-height: 700px;
+  padding: 15px;
+  background: #2C3E50;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FD746C, #2C3E50);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FD746C, #2C3E50);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .form-container a {
- text-decoration: none;
- color: #3e8e41;
+  text-decoration: none;
+  color: #3e8e41;
 }
 
 /* Button styles */
 .btn {
- background-color: #4CAF50;
- color: white;
- padding: 12px 20px;
- border: none;
- cursor: pointer;
- width: 100%;
- margin-bottom: 10px;
- opacity: 0.8;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
 
 /* Cancel button */
 .cancel {
- background-color: #ff6666;
+  background-color: #ff6666;
 }
 
 /* Hover effects */
 .btn:hover,
 .cancel:hover {
- opacity: 1;
+  opacity: 1;
 }
+
 .about-section {
- padding: 20px;
- margin-bottom: 20px;
- text-align: center;
+  padding: 20px;
+  margin-bottom: 200px;
+  text-align: center;
 }
 
 .about-section h2 {
- font-size: 24px;
- font-weight: bold;
- margin-bottom: 10px;
- color: mintcream;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: mintcream;
 }
 
 .about-section p {
- font-size: 16px;
- line-height: 1.5;
- margin-bottom: 0;
- color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  color: #fff;
 }
+
+/* Footer styles */
+footer {
+  background: linear-gradient(to top, #FD746C, #2C3E50);
+  margin-top: 100px;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #3e8e41;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 600px) {
- h1 {
-  font-size: 2em;
- }
+  h1 {
+    font-size: 1.6em;
+  }
 
- h2 {
-  font-size: 1.5em;
- }
+  h2 {
+    font-size: 1em;
+  }
+
   .form-popup {
-   display: block;
-   position: relative;
-   bottom: -10px;
-   left: 10px;
+    display: block;
+    position: relative;
+    top: 15px;
+    left: 5px;
   }
 }

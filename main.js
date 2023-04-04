@@ -62,3 +62,10 @@ function isValidEmail(email) {
   var emailRegex = /^\S+@\S+\.\S+$/;
   return emailRegex.test(email);
 }
+
+
+let header = document.querySelector("header");
+
+window.addEventListener("scroll", function () {
+  header.classList.toggle("sticky", window.scrollY > 0);
+});
